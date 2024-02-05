@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+
+}
+
+#pagina {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.mitad {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    height: 20%;
+}
