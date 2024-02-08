@@ -62,3 +62,8 @@ h1 {
 #verde {
     background-color: green;
 }
+
+#puntuacion {
+    text-align: center;
+    font-size: xx-large;
+}
