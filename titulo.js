@@ -12,3 +12,7 @@ function main() {
 };
 
 window.onload = main;
+
+function empezar() {
+    console.log("hola");
+}
