@@ -5,21 +5,32 @@ let opciones = [1, 2, 3, 4];
 let gameover = false;
 
 
-function main() {
-    turnoCPU();
-    turnoJ();
-}
-
 function turnoCPU() {
+    document.getElementById("go").disabled = true;
+    document.getElementsByClassName("colores").disabled = true;
+
     serie.push(opciones[Math.floor(Math.random() * 4)]);
 
     for (let i = 0; i < serie.length; i++) {
         setTimeout(()=>cambiarImagen(serie[i]), 500*i);
     }
+
+    document.getElementsByClassName("colores").disabled = false;
+
+    turnoJ();
 }
 
 function turnoJ() {
-
+    if (serieJ.length == serie.length) {
+        if (JSON.stringify(serieJ) === JSON.stringify(serie)) {
+            serieJ = [];
+            document.getElementById("puntuacion").innerHTML = score;
+            score += serie.length;
+            turnoCPU;
+        }else{
+            alert("¡Has perdido");
+        }
+    }
 }
 
 function cambiarImagen(numerin) {
@@ -35,6 +46,18 @@ function cambiarImagen(numerin) {
     }
 }
 
-function neutral() {
-    document.getElementById("imagen").src="img/simon.png";
+function pulsarVerde() {
+    serieJ.push(1);
+}
+
+function pulsarRojo() {
+    serieJ.push(2);
+}
+
+function pulsarAmarillo() {
+    serieJ.push(3);
+}
+
+function pulsarAzul() {
+    serieJ.push(4);
 }
