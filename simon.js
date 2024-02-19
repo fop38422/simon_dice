@@ -2,25 +2,19 @@ let serie = [];
 let serieJ = [];
 let score = 0;
 let opciones = [1, 2, 3, 4];
-let go = false;
 let gameover = false;
 
 
-while (go && !gameover) {
+function main() {
     turnoCPU();
     turnoJ();
-}
-
-function empezar() {
-    console.log("hola");
-    alert("uwu");
 }
 
 function turnoCPU() {
     serie.push(opciones[Math.floor(Math.random() * 4)]);
 
     for (let i = 0; i < serie.length; i++) {
-        cambiarImagen(serie[i]);
+        setTimeout(()=>cambiarImagen(serie[i]), 500*i);
     }
 }
 
@@ -39,4 +33,8 @@ function cambiarImagen(numerin) {
         case 4: document.getElementById("imagen").src ="img/azul.png";
         break; 
     }
+}
+
+function neutral() {
+    document.getElementById("imagen").src="img/simon.png";
 }
